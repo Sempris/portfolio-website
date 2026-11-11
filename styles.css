@@ -20,7 +20,7 @@ body{
   font-family:var(--serif);font-size:17px;line-height:1.65;
   font-variant-numeric:oldstyle-nums;
 }
-h1,h2,h3,h4,.sans{font-family:var(--sans);font-variant-numeric:lining-nums}
+h1,h2,h3,h4,h5,.sans{font-family:var(--sans);font-variant-numeric:lining-nums}
 a{color:var(--blue);text-decoration-thickness:1px;text-underline-offset:3px}
 a:hover{text-decoration-thickness:2px}
 :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:1px}
@@ -104,10 +104,33 @@ html[data-lang="en"] .statement .line[data-line="en"] .cue{display:none}
 .workgroup > p.note{margin:0 0 18px;color:var(--muted);font-size:.95rem}
 .item{padding:16px 0;border-top:1px solid var(--rule-soft);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 24px}
 .item:first-of-type{border-top:0}
-.item h4{margin:0;font-size:1.02rem;font-weight:600;font-stretch:106%;grid-column:1}
+.item h4,.item h5{margin:0;font-size:1.02rem;font-weight:600;font-stretch:106%;grid-column:1}
+.item code,.kit code{font-family:var(--mono);font-size:.86em}
 .item p{margin:0;grid-column:1;max-width:58ch;color:var(--muted);font-size:.98rem}
 .item .tech{grid-column:2;grid-row:1 / span 2;font-family:var(--mono);font-size:12px;color:var(--muted);text-align:right;line-height:1.75;padding-top:4px;white-space:nowrap}
 .item .tech span{display:block}
+
+/* ---------- figures & clusters ---------- */
+.figures{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:0 0 30px;border-top:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft)}
+.figures > div{padding:14px 16px 13px 0;display:flex;flex-direction:column-reverse;gap:2px}
+.figures > div + div{padding-left:16px;border-left:1px solid var(--rule-soft)}
+.figures dt{font-family:var(--sans);font-size:12.5px;color:var(--muted);line-height:1.35}
+.figures dd{margin:0;font-family:var(--sans);font-size:clamp(1.35rem,2.6vw,1.7rem);font-weight:600;font-stretch:112%;letter-spacing:-.02em;line-height:1.1;font-variant-numeric:lining-nums tabular-nums}
+.cluster{margin:0 0 22px}
+.cluster > .sub{margin:0;padding:6px 0 2px;font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--lang)}
+
+/* ---------- reference ---------- */
+.ref .refnote{margin:0 0 26px;color:var(--muted);font-size:.97rem}
+.quote{display:flex;flex-direction:column}
+.quote blockquote,.quote p{margin:0}
+.quote.lead{margin:0 0 30px;padding-left:22px;border-left:2px solid var(--lang-mark);max-width:60ch}
+.quote.lead blockquote p{font-size:1.22rem;line-height:1.5;max-width:56ch}
+.quote.lead figcaption{order:3;margin-top:12px;font-family:var(--sans);font-size:13.5px;color:var(--muted)}
+html[data-lang="en"] .quote .orig{order:2;margin-top:10px;color:var(--muted);font-size:.9rem;font-style:italic}
+html[data-lang="en"] .quote.lead .orig p{font-size:.95rem}
+.refs .quote p.tr,.refs .quote p.orig{color:var(--ink)}
+html[data-lang="en"] .refs .quote p.orig{color:var(--muted);font-size:.88rem}
+.ref .gloss{margin:18px 0 0;font-size:.93rem;color:var(--muted)}
 
 /* ---------- timeline ---------- */
 .tl{border-top:1px solid var(--rule-soft)}
@@ -118,7 +141,7 @@ html[data-lang="en"] .statement .line[data-line="en"] .cue{display:none}
 
 /* ---------- toolkit ---------- */
 .kit{display:grid;gap:2px}
-.kit div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:6px 24px;padding:13px 0;border-bottom:1px solid var(--rule-soft)}
+.kit > div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:6px 24px;padding:13px 0;border-bottom:1px solid var(--rule-soft)}
 .kit dt,.kit h3{margin:0;font-family:var(--sans);font-size:14px;font-weight:600;color:var(--ink)}
 .kit p{margin:0;font-size:.97rem;color:var(--muted);max-width:56ch}
 
@@ -146,7 +169,10 @@ footer{margin-top:64px;padding:22px 0 46px;border-top:1px solid var(--rule);font
   .item{grid-template-columns:minmax(0,1fr)}
   .item .tech{grid-column:1;grid-row:auto;text-align:left;max-width:none;padding-top:6px}
   .tl li{grid-template-columns:minmax(0,1fr)}
-  .kit div{grid-template-columns:minmax(0,1fr)}
+  .kit > div{grid-template-columns:minmax(0,1fr)}
+  .figures{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .figures > div:nth-child(3){padding-left:0;border-left:0}
+  .figures > div:nth-child(n+3){border-top:1px solid var(--rule-soft)}
   .hero{grid-template-columns:minmax(0,1fr);row-gap:0}
   .hero .portrait{grid-column:1;grid-row:auto;justify-self:start;width:108px;margin-top:24px}
   .hero h1{order:1}

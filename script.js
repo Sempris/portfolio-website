@@ -5,8 +5,8 @@
   var content = document.querySelector('.content');
 
   var titles = {
-    de: 'Wadim Skworzow — Full-Stack-Webentwickler',
-    en: 'Wadim Skworzow — Full-stack web developer'
+    de: 'Wadim Skworzow — Full-Stack-Entwickler',
+    en: 'Wadim Skworzow — Full-stack developer'
   };
 
   var switches = document.querySelectorAll('[data-set-lang]');
