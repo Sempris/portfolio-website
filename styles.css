@@ -131,6 +131,12 @@ html[data-lang="en"] .quote.lead .orig p{font-size:.95rem}
 .refs .quote p.tr,.refs .quote p.orig{color:var(--ink)}
 html[data-lang="en"] .refs .quote p.orig{color:var(--muted);font-size:.88rem}
 .ref .gloss{margin:18px 0 0;font-size:.93rem;color:var(--muted)}
+.recs{margin-top:44px}
+.recs > h3{margin:0 0 6px;font-size:1rem;font-weight:600;font-stretch:108%}
+.recs .refnote a{color:inherit}
+.recs .quote p.rec-orig,.recs .quote p.rec-tr{color:var(--ink)}
+html[data-lang="de"] .recs .quote p.rec-orig{order:2;margin-top:10px;color:var(--muted);font-size:.88rem;font-style:italic}
+.recs .quote p.rec-by{order:3;margin-top:10px;font-family:var(--sans);font-size:13px;color:var(--muted)}
 
 /* ---------- timeline ---------- */
 .tl{border-top:1px solid var(--rule-soft)}
